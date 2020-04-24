@@ -60,7 +60,8 @@ public class Main {
 			}
 			// Display board
 			displayBoard();
-			if (playerTurn == 1) {System.out.println("white's move");}else {System.out.println("black's move");}
+			if (playerTurn == 1) {System.out.println("White's move");
+			}else {System.out.println("Black's move");}
 //			int move = sc.nextInt();
 //			int initialY = move / 1000;
 //			int initialX = move % 1000 / 100;
