@@ -4,6 +4,7 @@ public class Knight extends Piece {
 
 	public Knight(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
+		value = this.getColor() == 0? -3 : 3;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -16,7 +17,7 @@ public class Knight extends Piece {
 	@Override
 	boolean checkLegal(int x1, int y1, int x2, int y2) {
 		// TODO Auto-generated method stub
-		//Check if final pos is either blank or opposite color
+		//Check if final position is either blank or opposite color
 		if(!(board[x2][y2] == null || board[x2][y2].getColor() != this.getColor())) return false;
 		
 		//Check normal move
@@ -26,6 +27,12 @@ public class Knight extends Piece {
 		}else return false;
 	}
 
-}
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
+	}
 
-    
+}
+	//check material
+	

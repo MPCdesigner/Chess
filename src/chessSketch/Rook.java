@@ -4,6 +4,7 @@ public class Rook extends Piece {
 	boolean firstMove;
 	public Rook(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
+		value = this.getColor() == 0? -5 : 5;
 		// TODO Auto-generated constructor stub
 		firstMove = true;
 	}
@@ -53,6 +54,12 @@ public class Rook extends Piece {
 		}
 
 		return ans;
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
 	}
 
 }

@@ -4,6 +4,7 @@ public class Queen extends Piece {
 
 	public Queen(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
+		value = this.getColor() == 0? -9 : 9;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -90,6 +91,12 @@ public class Queen extends Piece {
 		}
 	
 		return ans;
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
 	}
 	
 	

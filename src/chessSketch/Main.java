@@ -27,7 +27,7 @@ public class Main {
 		King whiteKing = new King(7, 4, 1);
 		
 		
-        //add Pieces
+        //add white Pieces
 		pList.add(new Rook(0, 0, 0));
 		pList.add(new Rook(0, 7, 0));
 		pList.add(new Knight(0, 1, 0));
@@ -36,7 +36,7 @@ public class Main {
 		pList.add(new Bishop(0, 5, 0));
 		pList.add(new Queen(0, 3, 0));
 		pList.add(blackKing);
-		
+		//add black pieces
 		pList.add(new Rook(7, 0, 1));
 		pList.add(new Rook(7, 7, 1));
 		pList.add(new Knight(7, 1, 1));
@@ -54,10 +54,21 @@ public class Main {
 		
 		while (true) {
 
-			for (Piece p : pList) {
+			int counter = 0;
+			for (Piece p : pList) {counter += p.getValue();
 				board[p.getPosX()][p.getPosY()] = p;
 				 // System.out.println(p.getType());
 			}
+			{System.out.println("Material Balance:" + counter);}
+			
+			if (counter == 0) {System.out.println("Balanced material");}
+			else {if (counter == -1) {System.out.println("Black has a material advantage of 1 unit");} 
+				  else {if (counter == 1) {System.out.println("White has a material advantage of 1 unit");}
+				  		else {if (counter > 1) {System.out.println("White has a material advantage of " + Math.abs(counter) + " units");}
+				  			  else {System.out.println("Black has a material advantage of " + Math.abs(counter) + " units");} 
+				  			 }
+				  		}
+				  }
 			// Display board
 			displayBoard();
 			if (playerTurn == 1) {System.out.println("White's move");
@@ -104,8 +115,7 @@ public class Main {
 				
 			}
 		}
-	}
-
+    }
 	public static void displayBoard() {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
@@ -126,5 +136,3 @@ public class Main {
 	
 
 }
-
-    

@@ -4,6 +4,7 @@ public class King extends Piece {
 	boolean firstMove;
 	public King(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
+		value = this.getColor() == 0? -1000 : 1000;
 		// TODO Auto-generated constructor stub
 		firstMove = true;	
 	}
@@ -40,6 +41,12 @@ public class King extends Piece {
 		}
 		
 		return false;
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
 	}
 
 }

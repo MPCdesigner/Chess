@@ -4,13 +4,14 @@ public class Bishop extends Piece {
 
 	public Bishop(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
+		value = this.getColor() == 0? -3 : 3;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	char getType() {
 		// TODO Auto-generated method stub
-		return this.getColor() == 0? 'b' : 'B';
+		return this.getColor() == 1? 'B' : 'b';
 	}
 
 	@Override
@@ -72,6 +73,12 @@ public class Bishop extends Piece {
 		}
 		return ans;
 		
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
 	}
 
 }

@@ -5,6 +5,7 @@ public class Pawn extends Piece {
 	public Pawn(int _posX, int _posY, int _color) {
 		super(_posX, _posY, _color);
 		firstMove = true;
+		value = this.getColor() == 0? -1 : 1;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -52,6 +53,12 @@ public class Pawn extends Piece {
 		}
 		
 		return ans;
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return this.value;
 	}
 
 }

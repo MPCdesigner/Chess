@@ -2,7 +2,7 @@
 
 public abstract class Piece extends Main {
 	private int posX, posY, color;
-	
+	protected int value;
 	Piece(int _posX, int _posY, int _color){
 		
 		posX = _posX;
@@ -23,7 +23,7 @@ public abstract class Piece extends Main {
 	}
 	
 	abstract char getType();
-	
+	public abstract int getValue();
 	//move
 	void makeMove(int x, int y) {
 		pList.remove(board[x][y]); 
